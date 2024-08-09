@@ -9,7 +9,6 @@ class Foo {
         int turn; // Shared resource
 
     public:
-        
         Foo() : turn(0) {}
 
         void first(function<void()> printFirst) {

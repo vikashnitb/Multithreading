@@ -31,18 +31,15 @@ class Foo {
             cv.wait(lock, [this]() { return turn == 2; });
             printThird();
         }
-        void print(const std::string& s) {
-            std::cout << s << std::endl;
-        }
 };
 
 int main() {
     Foo foo;
 
     // Define lambda functions to pass as arguments
-    auto printFirst = [&foo]() { foo.print("first"); };
-    auto printSecond = [&foo]() { foo.print("second"); };
-    auto printThird = [&foo]() { foo.print("third"); };
+    auto printFirst = []() { cout << "first" << endl; };
+    auto printSecond = []() { cout << "second" << endl; };
+    auto printThird = []() { cout << "third" << endl; };
 
     // Create threads and pass the lambda functions
     std::thread threadA([&foo, printFirst]() { foo.first(printFirst); });

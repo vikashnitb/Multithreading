@@ -97,6 +97,16 @@ int main() {
     int n = 15;  // You can change this value to test different ranges
 
     FizzBuzz fb(n);
+    
+
+/*  Parameters Explained
+    
+    &FizzBuzz::fizz: This is a pointer to the member function fizz of the FizzBuzz class. It tells the thread to execute the fizz method.
+
+    &fb: This is a pointer to the FizzBuzz instance (fb). It is passed to the thread so that the member function fizz will be called on this specific instance of FizzBuzz.
+
+    printFizz: This is a function pointer (or more accurately, a callable object) that is passed as an argument to the fizz method. In this case, printFizz is a function that prints "fizz". It will be used by the fizz method to output the required string when appropriate.
+*/
 
     thread t1(&FizzBuzz::fizz, &fb, printFizz);
     thread t2(&FizzBuzz::buzz, &fb, printBuzz);

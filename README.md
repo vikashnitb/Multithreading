@@ -1,1 +1,0 @@
-# Multithreading Questions often asked in Interviews

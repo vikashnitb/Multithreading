@@ -1,8 +1,4 @@
-#include <iostream>
-#include <thread>
-#include <mutex>
-#include <condition_variable>
-#include <functional>
+#include <bits/stdc++.h>
 
 using namespace std;
 
